@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # nd
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index
+    post = Post.create(content: params[:content])
+    rnder json:{ post: post}
   end
 end
